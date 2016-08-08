@@ -1,0 +1,2 @@
+[31-Jul-2016 19:18:04 Africa/Casablanca] PHP Fatal error:  Class 'AppModel' not found in /home/naja7ba7/public_html/plugins/delete_invoices/models/delete_invoices_action.php on line 3
+[31-Jul-2016 19:18:05 Africa/Casablanca] PHP Fatal error:  Class 'AppModel' not found in /home/naja7ba7/public_html/plugins/delete_invoices/models/delete_invoices_settings.php on line 3

@@ -1,0 +1,71 @@
+    <?php
+	$link_buttons = array(
+		array('name'=>$this->_("AdminManagePlugin.index.add_donate", true),  'attributes'=>array('href'=> $this->Html->ifSet($donate_url) , 'class'=>"add_donate")),
+	);
+		
+	
+    $this->Widget->clear();
+	$this->Widget->setStyleSheet($this->view_dir . "css/styles.css");	
+	$this->Widget->setLinkButtons($link_buttons);	
+    $this->Widget->create($this->_('AdminManagePlugin.index.boxtitle', true));
+    $this->Form->create();
+    ?>
+    <div class="inner">
+        <div class="title_row first">
+            <h3><?php $this->_('AdminManagePlugin.index.heading_settings');?></h3>
+        </div>
+
+        <div class="pad">
+            <ul>
+                <li>
+                    <?php
+                    $this->Form->label($this->_('AdminManagePlugin.index.field.cancel_days', true),'cancel_days');
+                    $this->Form->fieldSelect('cancel_days',$this->Html->ifSet($days),$this->Html->ifSet($vars->cancel_days),array('id' => 'cancel_days'));
+                    ?>
+                </li>	
+                <li>
+                    <?php
+                    $this->Form->label($this->_('AdminManagePlugin.index.field.add_proforma', true),'add_proforma');
+                    $this->Form->fieldSelect('add_proforma',$this->Html->ifSet($add_proforma),$this->Html->ifSet($vars->add_proforma),array('id' => 'add_proforma'));
+                    ?>
+                </li>					
+            </ul>
+        </div>
+        <div class="button_row"><a class="btn_right submit" href="#"><?php $this->_('AdminManagePlugin.index.field.submit');?></a></div>
+    <?php
+    $this->Form->end();
+    $this->Form->create();
+    ?>
+        <div class="title_row">
+            <h3><?php $this->_('AdminManagePlugin.index.heading_mass_action');?></h3>
+        </div>
+		
+       <div class="pad">
+            <ul>
+                <li>
+                    <?php				
+                    $this->Form->label($this->_('AdminManagePlugin.index.field.cancel_days', true),'mass_cancel_days');
+                    $this->Form->fieldSelect('mass_cancel_days',$this->Html->ifSet($days),$this->Html->ifSet($vars->mass_cancel_days),array('id' => 'mass_cancel_days'));
+					$this->Form->fieldHidden("mass_action", "1" , array('id' => "mass_action"));					
+                    ?>
+                </li>	
+                <li>
+                    <?php
+                    $this->Form->label($this->_('AdminManagePlugin.index.field.add_proforma', true),'mass_add_proforma');
+                    $this->Form->fieldSelect('mass_add_proforma',$this->Html->ifSet($add_proforma),$this->Html->ifSet($vars->mass_add_proforma),array('id' => 'mass_add_proforma'));
+                    ?>
+                </li>					
+            </ul>
+        </div>
+        <div class="button_row"><a class="btn_right submit" href="#"><?php $this->_('AdminManagePlugin.index.field.submit_delete');?></a></div>
+		
+    </div>
+	
+	<div class="title_row"> 
+		<h3><a href="<?php echo $this->Html->safe($donate_url);?>" ><?php $this->_("AdminManagePlugin.index.add_donate");?></a><?php $this->_("AdminManagePlugin.index.donate_link");?></h3>
+	</div>
+		
+    <?php
+    $this->Form->end();
+    $this->Widget->end();
+    ?>

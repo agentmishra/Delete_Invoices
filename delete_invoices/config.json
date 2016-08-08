@@ -1,0 +1,11 @@
+{
+    "version": "1.1.0",
+    "name": "Delete Invoices",
+    "description": "Plugin To delete voided invoices.",
+    "authors": [
+        {
+			"name": "KST S.L",
+			"url": "http://www.kst-hosting.com"
+        }
+    ]
+}
